@@ -23,6 +23,7 @@ jobs:
         needs: 
             - build_job
             - deploy_job
+            - deploy_job
     build_job:
         runs-on: windows-latest
         steps:
