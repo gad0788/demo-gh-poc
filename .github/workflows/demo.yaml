@@ -20,6 +20,9 @@ jobs:
               run: echo "Hello World!"
             - name: display readme file
               run: cat README.md
+        needs: 
+            - build_job
+            - deploy_job
     build_job:
         runs-on: windows-latest
         steps:
