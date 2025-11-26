@@ -22,14 +22,15 @@ jobs:
               run: cat README.md
         needs: 
             - build_job
-            - deploy_job
-            - deploy_job
+            - build_job
     build_job:
         runs-on: windows-latest
         steps:
             - name: display hello
               run: echo hello
     deploy_job:
+        needs:
+            - setup_job
         runs-on: macos-latest
         steps:
             - run: echo "ello Mac"
